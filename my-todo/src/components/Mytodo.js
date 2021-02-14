@@ -23,13 +23,15 @@ class Mytodo extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form class="form-inline text-center" onSubmit={this.handleSubmit}>
                 <input
+                    class="form-control"
                     name='desc_todo'
                     onChange={this.handleChange}
                     value={this.state.desc_todo}
+                    required
                 />
-                <button type='submit'>할일추가</button>
+                <button className="form-control btn btn-primary m-2" type='submit'>할일추가</button>
             </form>
         );
     }

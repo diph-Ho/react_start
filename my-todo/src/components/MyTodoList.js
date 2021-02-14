@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import MyTodoListForm from './MyTodoListForm';
 
 class MyTodoList extends Component {
@@ -8,7 +8,7 @@ class MyTodoList extends Component {
     }
 
     render() {
-        const{my_todos} = this.props;
+        const{my_todos, onRemove} = this.props;
 
         if(!my_todos) return null;
 
@@ -16,15 +16,16 @@ class MyTodoList extends Component {
             mytodo_list => (
                 <MyTodoListForm
                     mytodo_list={mytodo_list}
+                    onRemove={onRemove}
                     key={mytodo_list.id}
                 />
             )
         )
 
         return (
-            <div>
+            <Fragment>
                 {list}
-            </div>
+            </Fragment>
         );
     }
 }
